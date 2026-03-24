@@ -63,63 +63,7 @@ export function FeaturedProjects() {
           </div>
         </div>
 
-        <div className="mt-14">
-          <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-            Logo & brand
-          </p>
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {logoDesigns.map((l) => (
-              <div
-                key={l.id}
-                className={`flex aspect-square items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br ${l.accent} text-sm font-medium text-white/80`}
-              >
-                {l.label}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {design.length > 0 ? (
-          <div className="mt-14">
-            <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">UI</p>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              {design.map((p) => {
-                const src = projectCardSrc(p);
-                return (
-                  <article
-                    key={p.id}
-                    className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40"
-                  >
-                    <div className="relative aspect-[21/9] w-full overflow-hidden bg-zinc-900 sm:aspect-[2/1]">
-                      {src ? (
-                        <Image
-                          src={src}
-                          alt={p.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 640px) 100vw, 50vw"
-                        />
-                      ) : (
-                        <div className="flex h-full items-end bg-gradient-to-br from-zinc-800 to-zinc-950 p-5">
-                          <span className="text-base font-medium text-white/90">{p.title}</span>
-                        </div>
-                      )}
-                      <div
-                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
-                        aria-hidden
-                      />
-                      {src && (
-                        <div className="absolute bottom-0 left-0 right-0 p-5">
-                          <span className="text-base font-medium text-white/90">{p.title}</span>
-                        </div>
-                      )}
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        ) : null}
+        
       </div>
     </section>
   );
